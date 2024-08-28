@@ -1,0 +1,19 @@
+<%- include("layout/header.ejs") %>
+  <p>
+    <% if(test.length > 0){ %>
+    <strong><%= test %></strong>
+    <% } %>
+  </p>
+  <p>
+    <% if (subscribedPeople.length > 0 ) { %>
+     <% for( let i = 0; i < subscribedPeople.length; i++ ) { %>
+      <strong><%= subscribedPeople[i] %>,</strong>
+     <% } %>
+    <% } %>
+  </p>
+  <form action="/receive" method="post">
+    <input type="text" name="name"/>
+    <button type="submit">Submit</button>
+  </form>
+
+<%- include("layout/footer.ejs") %>
